@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-in-docker
+{
+	"name": "Docker in Docker",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"dockerFile": "Dockerfile",
+    "context": "..",
+    "runArgs": [
+        "--gpus", "all",
+        "-e", "ACCEPT_EULA=Y",
+        "--network=host",
+        "-v", "/home/mikexyl/.Xauthority:/root/.Xauthority",
+        "-e", "DISPLAY",
+        "-e", "OMNI_USER=${localEnv:omni_user}",
+        "-e", "OMNI_PASS=${localEnv:omni_password}",
+        "-e", "OMNI_SERVER=${localEnv:omni_server}",
+        "-v", "/home/mikexyl/docker/isaac-sim/kit/cache/Kit:/isaac-sim/kit/cache/Kit:rw",
+        "-v", "/home/mikexyl/docker/isaac-sim/cache/ov:/root/.cache/ov:rw",
+        "-v", "/home/mikexyl/docker/isaac-sim/cache/pip:/root/.cache/pip:rw",
+        "-v", "/home/mikexyl/docker/isaac-sim/cache/glcache:/root/.cache/nvidia/GLCache:rw",
+        "-v", "/home/mikexyl/docker/isaac-sim/cache/computecache:/root/.nv/ComputeCache:rw",
+        "-v", "/home/mikexyl/docker/isaac-sim/logs:/root/.nvidia-omniverse/logs:rw",
+        "-v", "/home/mikexyl/docker/isaac-sim/config:/root/.nvidia-omniverse/config:rw",
+        "-v", "/home/mikexyl/docker/isaac-sim/data:/root/.local/share/ov/data:rw",
+        "-v", "/home/mikexyl/docker/isaac-sim/documents:/root/Documents:rw",
+        "-v", "/home/mikexyl/Workspaces/isaac_ws:/workspace/"
+    ],
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "remoteUser": "isaac"
+}
