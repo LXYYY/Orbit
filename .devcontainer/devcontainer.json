@@ -3,8 +3,8 @@
 {
 	"name": "Docker in Docker",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerFile": "Dockerfile",
-    "context": "..",
+	"dockerFile": "./Dockerfile",
+    "context": ".",
     "runArgs": [
         "--gpus", "all",
         "-e", "ACCEPT_EULA=Y",
