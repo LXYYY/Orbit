@@ -23,7 +23,7 @@
         "-v", "/home/mikexyl/docker/isaac-sim/config:/root/.nvidia-omniverse/config:rw",
         "-v", "/home/mikexyl/docker/isaac-sim/data:/root/.local/share/ov/data:rw",
         "-v", "/home/mikexyl/docker/isaac-sim/documents:/root/Documents:rw",
-        "-v", "/home/mikexyl/Workspaces/isaac_ws:/workspace/"
+        "-v", "/home/mikexyl/Workspaces/isaac_ws/data:/workspaces/data:rw"
     ],
     "settings": { 
         "terminal.integrated.shell.linux": "/bin/bash"

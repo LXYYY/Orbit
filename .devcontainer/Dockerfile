@@ -19,10 +19,6 @@ RUN useradd --create-home --shell /bin/zsh isaac \
 # Configure sudo to not prompt for a password
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-# Set the user to isaac
-
-WORKDIR /workspace/Orbit
-
 ENV ISAACSIM_PATH /isaac-sim
 
 # ENV OMNI_SERVER omniverse://localhost/NVIDIA/Assets/Isaac/2022.1

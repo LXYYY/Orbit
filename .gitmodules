@@ -1,0 +1,3 @@
+[submodule "source/extensions/scaler.isaac.scaler"]
+	path = source/extensions/scaler.isaac.scaler
+	url = git@github.com:LXYYY/Scaler.git
