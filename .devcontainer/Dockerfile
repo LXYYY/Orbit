@@ -99,6 +99,12 @@ RUN colcon \
       -DSECURITY=ON --no-warn-unused-cli \
     --symlink-install
 
+RUN apt update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y --no-install-recommends \
+    ros-foxy-ament-cmake \
+    ros-foxy-ament-cmake-lint-auto \
+    && rm -rf /var/lib/apt/lists/*
+
 # setup bashrc
 RUN cp /etc/skel/.bashrc ~/
 
